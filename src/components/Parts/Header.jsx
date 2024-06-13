@@ -29,6 +29,11 @@ const Header = () => {
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
+            <Link to="/password" className={navigationMenuTriggerStyle()}>
+              Password
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
             <Link to="/logout" className={navigationMenuTriggerStyle()}>
               Log out
             </Link>
