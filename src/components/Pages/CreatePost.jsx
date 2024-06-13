@@ -23,6 +23,8 @@ const CreatePost = () => {
     description: "",
     published: null,
   });
+  const [titleLength, setTitleLength] = useState(0);
+  const [descLength, setDescLength] = useState(0);
   const [formErrors, setFormErrors] = useState(null);
   const navigate = useNavigate();
 
@@ -44,6 +46,11 @@ const CreatePost = () => {
 
   const handleFieldChange = (e) => {
     setPostData({ ...postData, [e.target.name]: e.target.value });
+    if (e.target.name === "title") {
+      setTitleLength(e.target.value.length);
+    } else {
+      setDescLength(e.target.value.length);
+    }
   };
 
   const handleSelectChange = (value) => {
@@ -98,6 +105,9 @@ const CreatePost = () => {
               value={postData.title}
               onChange={handleFieldChange}
             />
+            <div className="flex flex-row items-center  justify-end w-full">
+              <span className="text-sm text-slate-400">{titleLength}/124</span>
+            </div>
             {formErrors && formErrors.title ? (
               <span className=" text-sm text-red-700">{formErrors.title}</span>
             ) : (
@@ -114,6 +124,9 @@ const CreatePost = () => {
               value={postData.description}
               onChange={handleFieldChange}
             />
+            <div className="flex flex-row items-center  justify-end w-full">
+              <span className="text-sm text-slate-400">{descLength}/200</span>
+            </div>
             {formErrors && formErrors.description ? (
               <span className=" text-sm text-red-700">
                 {formErrors.description}
