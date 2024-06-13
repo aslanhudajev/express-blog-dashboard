@@ -6,6 +6,7 @@ import { Editor } from "@tinymce/tinymce-react";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import { toast } from "sonner";
 import {
   Select,
   SelectContent,
@@ -74,6 +75,7 @@ const EditPost = () => {
           },
         },
       );
+      toast("Post has been edited");
       navigate("/");
     } catch (error) {
       console.error("Error creating post:", error);
@@ -92,6 +94,7 @@ const EditPost = () => {
           },
         },
       );
+      toast("Post has been deleted");
       navigate("/");
     } catch (error) {
       console.error("Error deleting post:", error);

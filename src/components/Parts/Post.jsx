@@ -23,7 +23,7 @@ const Post = ({ title, description, posted }) => {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <p>{description}</p>
+        <p className="break-words">{description}</p>
       </CardContent>
     </Card>
   );
