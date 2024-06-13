@@ -122,6 +122,11 @@ const EditPost = () => {
               value={postData.title}
               onChange={handleFieldChange}
             />
+            <div className="flex flex-row items-center  justify-end w-full">
+              <span className="text-sm text-slate-400">
+                {postData.title.length}/124
+              </span>
+            </div>
             {formErrors && formErrors.title ? (
               <span className=" text-sm text-red-700">{formErrors.title}</span>
             ) : (
@@ -138,6 +143,11 @@ const EditPost = () => {
               value={postData.description}
               onChange={handleFieldChange}
             />
+            <div className="flex flex-row items-center  justify-end w-full">
+              <span className="text-sm text-slate-400">
+                {postData.description.length}/200
+              </span>
+            </div>
             {formErrors && formErrors.description ? (
               <span className=" text-sm text-red-700">
                 {formErrors.description}
