@@ -124,7 +124,7 @@ const CreatePost = () => {
           </div>
 
           <Editor
-            apiKey="1b6djfyttstri23a618ikriwgcrv7ajbdkco2a8bryfbbhkq"
+            apiKey={import.meta.env.VITE_TINY_API}
             onInit={(_evt, editor) => (editorRef.current = editor)}
             onEditorChange={handleContentChange}
             init={{
