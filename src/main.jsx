@@ -12,6 +12,7 @@ import CreatePost from "./components/Pages/CreatePost";
 import Posts from "./components/Pages/Posts";
 import EditPost from "./components/Pages/EditPost";
 import Error from "./components/Pages/Error";
+import ChangePassword from "./components/Pages/ChangePassword";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/edit/:postId",
         element: <EditPost />,
+      },
+      {
+        path: "/password",
+        element: <ChangePassword />,
       },
     ],
   },
