@@ -15,7 +15,7 @@ const Posts = () => {
     queryFn: async () => {
       try {
         const posts = await axios.get(
-          "http://localhost:3000/api/dashboard/posts",
+          `https://${import.meta.env.VITE_API_URL}/api/dashboard/posts`,
           {
             headers: {
               Authorization: localStorage.getItem("token"),

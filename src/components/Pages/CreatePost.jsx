@@ -29,11 +29,14 @@ const CreatePost = () => {
   useEffect(() => {
     const authenticate = async () => {
       try {
-        await axios.get("http://localhost:3000/api/dashboard/authenticate", {
-          headers: {
-            Authorization: localStorage.getItem("token"),
+        await axios.get(
+          `https://${import.meta.env.VITE_API_URL}/api/dashboard/authenticate`,
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
           },
-        });
+        );
       } catch (error) {
         navigate("/login");
       }
@@ -58,7 +61,7 @@ const CreatePost = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3000/api/dashboard/new-post",
+        `https://${import.meta.env.VITE_API_URL}/api/dashboard/new-post`,
         postData,
         {
           headers: {

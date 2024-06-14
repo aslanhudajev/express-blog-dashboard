@@ -31,7 +31,7 @@ const EditPost = () => {
     const authenticate = async () => {
       try {
         const post = await axios.get(
-          `http://localhost:3000/api/dashboard//post/${postId}`,
+          `https://${import.meta.env.VITE_API_URL}/api/dashboard//post/${postId}`,
           {
             headers: {
               Authorization: localStorage.getItem("token"),
@@ -63,7 +63,7 @@ const EditPost = () => {
     e.preventDefault();
     try {
       await axios.post(
-        `http://localhost:3000/api/dashboard/edit/${postId}`,
+        `https://${import.meta.env.VITE_API_URL}/api/dashboard/edit/${postId}`,
         postData,
         {
           headers: {

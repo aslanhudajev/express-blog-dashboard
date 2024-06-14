@@ -13,11 +13,14 @@ const Login = () => {
   useEffect(() => {
     const authenticate = async () => {
       try {
-        await axios.get("http://localhost:3000/api/dashboard/authenticate", {
-          headers: {
-            Authorization: localStorage.getItem("token"),
+        await axios.get(
+          `https://${import.meta.env.VITE_API_URL}/api/dashboard/authenticate`,
+          {
+            headers: {
+              Authorization: localStorage.getItem("token"),
+            },
           },
-        });
+        );
         navigate("/");
       } catch (error) {
         console.log(error);
@@ -32,7 +35,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const payload = await axios.post(
-        "http://localhost:3000/api/dashboard/signin",
+        `https://${import.meta.env.VITE_API_URL}/api/dashboard/signin`,
         loginData,
       );
       localStorage.setItem("token", payload.data.token);

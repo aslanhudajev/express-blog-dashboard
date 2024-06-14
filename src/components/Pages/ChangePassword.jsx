@@ -18,7 +18,7 @@ const ChangePassword = () => {
   useEffect(() => {
     const authenticate = async () => {
       try {
-        await axios.get("http://localhost:3000/api/dashboard/authenticate", {
+        await axios.get("https://localhost:3000/api/dashboard/authenticate", {
           headers: {
             Authorization: localStorage.getItem("token"),
           },
@@ -36,7 +36,7 @@ const ChangePassword = () => {
     if (changePasswordData.password === changePasswordData.confirm) {
       try {
         await axios.post(
-          "http://localhost:3000/api/dashboard/edit/password",
+          "https://localhost:3000/api/dashboard/edit/password",
           {
             ...changePasswordData,
           },
